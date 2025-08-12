@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "serverError": "服务器错误",
+    "noFileSelected": "请选择要上传的文件",
+    "fileNotFound": "文件不存在或无权访问",
+    "unauthorized": "未授权",
+    "invalidToken": "令牌无效",
+    "diskSpaceError": "获取磁盘空间失败",
+    "dbQueryError": "数据库查询失败",
+    "userExists": "用户名或邮箱已被注册",
+    "invalidCredentials": "用户名或密码错误",
+    "targetUserNotFound": "目标用户不存在",
+    "friendRequestExists": "好友请求已发送",
+    "friendRequestNotFound": "好友请求不存在",
+    "noPermission": "无权处理此请求",
+    "roomNotFound": "聊天室不存在",
+    "noPermissionDeleteRoom": "无权删除此聊天室",
+    "noPermissionSendMessage": "无权发送消息到该聊天室",
+    "noPermissionViewMessages": "无权查看该聊天室消息"
+  },
+  "success": {
+    "default": "操作成功",
+    "publicKeyUploaded": "公钥上传成功",
+    "registered": "注册成功",
+    "friendRequestSent": "好友请求已发送",
+    "friendRequestAccepted": "好友请求已接受",
+    "friendRequestRejected": "好友请求已拒绝",
+    "roomDeleted": "聊天室已删除"
+  }
+}
