@@ -64,7 +64,7 @@ server/
 
 ## API 文档
 
-详细的 API 文档请查看：[API 文档](server/api-documentation.md)
+详细的 API 文档请查看：[API 文档](api-documentation.md)
 
 ## 启动服务器
 
