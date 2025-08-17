@@ -2,6 +2,8 @@ const winston = require('winston');
 const DailyRotateFile = require('winston-daily-rotate-file');
 const fs = require('fs');
 const path = require('path');
+const ConfigManager = require('./config');
+const config = new ConfigManager();
 
 // 确保日志目录存在
 const logDir = path.join(__dirname, 'logs');
@@ -18,9 +20,12 @@ const logFormat = winston.format.combine(
   })
 );
 
+// 从配置中获取日志级别
+const logLevel = config.get('logLevel', 'info');
+
 // 创建logger
 const logger = winston.createLogger({
-  level: 'info',
+  level: logLevel,
   format: logFormat,
   transports: [
     // 控制台输出

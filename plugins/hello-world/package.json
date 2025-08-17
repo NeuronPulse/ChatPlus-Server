@@ -1,0 +1,16 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Hello World plugin for ChatPlus",
+  "main": "index.js",
+  "author": "ChatPlus Team",
+  "license": "MIT",
+  "dependencies": {},
+  "chatplus": {
+    "name": "Hello World",
+    "description": "A simple example plugin",
+    "version": "1.0.0",
+    "author": "ChatPlus Team",
+    "requires": []
+  }
+}

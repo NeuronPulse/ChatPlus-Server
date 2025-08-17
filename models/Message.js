@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db');
+const { sequelize, Sequelize } = require('../db');
+const DataTypes = Sequelize.DataTypes;
 const User = require('./User');
 const Room = require('./Room');
 
@@ -21,17 +21,7 @@ const Message = sequelize.define('Message', {
     type: DataTypes.BOOLEAN,
     defaultValue: false
   },
-  mentionedUsers: {
-    type: DataTypes.TEXT,
-    allowNull: true,
-    get() {
-      const value = this.getDataValue('mentionedUsers');
-      return value ? JSON.parse(value) : [];
-    },
-    set(value) {
-      this.setDataValue('mentionedUsers', JSON.stringify(value));
-    }
-  }
+  mentionedUsers: {    type: DataTypes.TEXT,    allowNull: true,    get() {      const value = this.getDataValue('mentionedUsers');      return value ? JSON.parse(value) : [];    },    set(value) {      this.setDataValue('mentionedUsers', JSON.stringify(value));    }  },  isRecalled: {    type: DataTypes.BOOLEAN,    defaultValue: false  },  recalledAt: {    type: DataTypes.DATE,    allowNull: true  },  editedAt: {    type: DataTypes.DATE,    allowNull: true  },  originalContent: {    type: DataTypes.TEXT,    allowNull: true  }
 }, {
   timestamps: true
 });

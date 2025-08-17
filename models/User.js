@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db');
+const { sequelize, Sequelize } = require('../db');
+const DataTypes = Sequelize.DataTypes;
 
 const User = sequelize.define('User', {
   id: {
@@ -33,10 +33,7 @@ const User = sequelize.define('User', {
     type: DataTypes.BOOLEAN,
     defaultValue: false
   },
-  lastActive: {
-    type: DataTypes.DATE,
-    allowNull: true
-  }
+  lastActive: {    type: DataTypes.DATE,    allowNull: true  },  statusMessage: {    type: DataTypes.STRING,    allowNull: true  }
 }, {
   timestamps: true,
   paranoid: true

@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db');
+const { sequelize, Sequelize } = require('../db');
+const DataTypes = Sequelize.DataTypes;
 const User = require('./User');
 const Room = require('./Room');
 
@@ -25,10 +25,7 @@ const File = sequelize.define('File', {
     type: DataTypes.STRING,
     allowNull: false
   },
-  isVoiceMessage: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false
-  }
+  isVoiceMessage: {    type: DataTypes.BOOLEAN,    defaultValue: false  },  encrypted: {    type: DataTypes.BOOLEAN,    defaultValue: false  }
 }, {
   timestamps: true
 });

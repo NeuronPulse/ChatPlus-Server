@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db');
+const { sequelize, Sequelize } = require('../db');
+const DataTypes = Sequelize.DataTypes;
 const User = require('./User');
 
 const FriendRequest = sequelize.define('FriendRequest', {

@@ -1,0 +1,14 @@
+{
+  "name": "example-permission",
+  "version": "1.0.0",
+  "description": "Example plugin demonstrating permission system usage",
+  "main": "index.js",
+  "type": "module",
+  "permissions": [
+    "user:read",
+    "message:read"
+  ],
+  "dependencies": {},
+  "author": "ChatPlus Team",
+  "license": "MIT"
+}

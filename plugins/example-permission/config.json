@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "logLevel": "info",
+  "debugMode": false,
+  "maxMessages": 100
+}

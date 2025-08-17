@@ -1,5 +1,4 @@
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db');
+const { sequelize, DataTypes } = require('../db');
 const User = require('./User');
 
 const Room = sequelize.define('Room', {
@@ -20,10 +19,7 @@ const Room = sequelize.define('Room', {
     type: DataTypes.ENUM('private', 'group'),
     defaultValue: 'private'
   },
-  avatar: {
-    type: DataTypes.STRING,
-    allowNull: true
-  }
+  avatar: {    type: DataTypes.STRING,    allowNull: true  },  announcement: {    type: DataTypes.TEXT,    allowNull: true  },  announcementUpdatedAt: {    type: DataTypes.DATE,    allowNull: true  }
 }, {
   timestamps: true
 });
