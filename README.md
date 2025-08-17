@@ -149,7 +149,7 @@ npm run db:migrate
 
 ChatPlus 插件系统允许开发者扩展应用功能，集成第三方服务，实现高度定制化。插件系统基于事件驱动架构，提供简单易用的 API 和完整的生命周期管理。
 
-详细的插件系统设计和开发指南，请参考 [插件系统设计文档](PLUGIN_SYSTEM_DESIGN.md)。
+详细的插件系统设计和开发指南，请参考 [插件系统设计文档](docs/PLUGIN_SYSTEM_DESIGN.md)。
 
 ### 核心特点
 
@@ -183,7 +183,7 @@ ChatPlus 插件系统允许开发者扩展应用功能，集成第三方服务�
 
 API 文档详细描述了所有可用的 API 端点、请求参数和响应格式，包括认证、用户管理、消息处理、文件传输、群组管理和多设备同步等功能。
 
-完整的 API 文档，请参考 [API 文档](api-documentation.md)。
+完整的 API 文档，请参考 [API 文档](docs/api-documentation.md)。
 
 ### 核心功能 API
 
