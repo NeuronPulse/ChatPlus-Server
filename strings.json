@@ -16,7 +16,12 @@
     "roomNotFound": "聊天室不存在",
     "noPermissionDeleteRoom": "无权删除此聊天室",
     "noPermissionSendMessage": "无权发送消息到该聊天室",
-    "noPermissionViewMessages": "无权查看该聊天室消息"
+    "noPermissionViewMessages": "无权查看该聊天室消息",
+    "mixinNotFound": "Mixin未找到: {mixinName}",
+    "mixinNotApplied": "Mixin未应用: {mixinName}",
+    "applyMixinFailed": "应用mixin失败: {mixinName}",
+    "removeMixinFailed": "移除mixin失败: {mixinName}",
+    "hookExecutionFailed": "钩子执行失败: {hookName}"
   },
   "success": {
     "default": "操作成功",
@@ -25,6 +30,16 @@
     "friendRequestSent": "好友请求已发送",
     "friendRequestAccepted": "好友请求已接受",
     "friendRequestRejected": "好友请求已拒绝",
-    "roomDeleted": "聊天室已删除"
+    "roomDeleted": "聊天室已删除",
+    "mixinRegistered": "Mixin已注册: {mixinName}",
+    "mixinUnregistered": "Mixin已注销: {mixinName}",
+    "mixinApplied": "Mixin已应用: {mixinName}",
+    "mixinRemoved": "Mixin已移除: {mixinName}",
+    "hookRegistered": "钩子已注册: {hookName}",
+    "hookRemoved": "钩子已移除: {hookName}"
+  },
+  "info": {
+    "mixinAlreadyRegistered": "Mixin已注册: {mixinName}",
+    "hookTriggered": "钩子已触发: {hookName}"
   }
 }

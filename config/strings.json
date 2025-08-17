@@ -12,7 +12,9 @@
     "permissionsGranted": "已授予插件 {pluginName} 权限: {permissions}",
     "permissionsRevoked": "已撤销插件 {pluginName} 权限: {permissions}",
     "performanceMetricsSummary": "性能指标摘要",
-    "apiDocGeneratorInitialized": "API文档生成器已初始化"
+    "apiDocGeneratorInitialized": "API文档生成器已初始化",
+    "mixinAlreadyRegistered": "Mixin已注册: {mixinName}",
+    "hookTriggered": "钩子已触发: {hookName}"
   },
   
   "console": {
@@ -125,7 +127,12 @@
     "failedToGetDevice": "Failed to get device:",
     "failedToUpdateDevice": "Failed to update device:",
     "failedToDeleteDevice": "Failed to delete device:",
-    "failedToOptimizeCrypto": "Failed to optimize crypto performance:"
+    "failedToOptimizeCrypto": "Failed to optimize crypto performance:",
+    "mixinNotFound": "Mixin未找到: {mixinName}",
+    "mixinNotApplied": "Mixin未应用: {mixinName}",
+    "applyMixinFailed": "应用mixin失败: {mixinName}",
+    "removeMixinFailed": "移除mixin失败: {mixinName}",
+    "hookExecutionFailed": "钩子执行失败: {hookName}"
   },
   "warnings": {
     "pleaseSpecifyPluginName": "Please specify plugin name",
@@ -195,7 +202,13 @@
     "membersAdded": "已添加 {count} 名成员到群组 {groupId}",
     "memberRemoved": "已从群组 {groupId} 移除用户 {userId}",
     "memberRoleUpdated": "已将用户 {userId} 在群组 {groupId} 中的角色更新为 {role}",
-    "announcementUpdated": "已更新群组 {groupId} 的公告"
+    "announcementUpdated": "已更新群组 {groupId} 的公告",
+    "mixinRegistered": "Mixin已注册: {mixinName}",
+    "mixinUnregistered": "Mixin已注销: {mixinName}",
+    "mixinApplied": "Mixin已应用: {mixinName}",
+    "mixinRemoved": "Mixin已移除: {mixinName}",
+    "hookRegistered": "钩子已注册: {hookName}",
+    "hookRemoved": "钩子已移除: {hookName}"
   },
   "listItems": {
     "userItem": "  - {username} ({email}) - {status}",

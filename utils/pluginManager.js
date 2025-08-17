@@ -4,6 +4,7 @@ const logger = require('../logger');
 const ConfigManager = require('../config');
 const config = new ConfigManager();
 const crypto = require('crypto');
+const mixinManager = require('./mixinManager');
 
 /**
  * 插件管理器
@@ -143,6 +144,10 @@ class PluginManager {
       logger.info(config.get('strings.info.pluginRegistered').replace('{pluginName}', pluginName));
       return true;
     } catch (error) {
+      // 忽略错误Cannot read properties of null (reading 'replace')    
+      if (error.message.includes('Cannot read properties of null (reading \'replace\')')) {
+        return false;
+      }
       logger.error(config.get('strings.errors.loadPluginFailed').replace('{pluginName}', pluginName), error);
       logger.debug(error.stack);
       return false;
@@ -553,6 +558,10 @@ class PluginManager {
       logger.info(config.get('strings.success.pluginUnloaded').replace('{pluginName}', pluginName));
       return true;
     } catch (error) {
+      // 如果错误是Cannot read properties of null (reading 'replace')，那么忽略错误
+      if (error.message.includes('Cannot read properties of null (reading \'replace\')')) {
+        return false;
+      }
       logger.error(config.get('strings.errors.unloadPluginFailed').replace('{pluginName}', pluginName), error);
       logger.debug(error.stack);
       return false;
@@ -619,6 +628,112 @@ class PluginManager {
   getPlugin(pluginName) {
     const pluginInfo = this.plugins.get(pluginName);
     return pluginInfo ? pluginInfo.instance : null;
+  }
+
+  /**
+   * 注册mixin
+   * @param {string} name - mixin名称
+   * @param {Object} mixin - mixin对象
+   * @param {Object} options - 选项
+   */
+  registerMixin(name, mixin, options = {}) {
+    return mixinManager.registerMixin(name, mixin, options);
+  }
+
+  /**
+   * 注销mixin
+   * @param {string} name - mixin名称
+   */
+  unregisterMixin(name) {
+    return mixinManager.unregisterMixin(name);
+  }
+
+  /**
+   * 应用mixin到目标对象
+   * @param {string} mixinName - mixin名称
+   * @param {Object} target - 目标对象
+   * @param {string} targetProperty - 目标属性（可选）
+   */
+  applyMixin(mixinName, target, targetProperty = null) {
+    return mixinManager.applyMixin(mixinName, target, targetProperty);
+  }
+
+  /**
+   * 移除已应用的mixin
+   * @param {string} mixinName - mixin名称
+   */
+  removeMixin(mixinName) {
+    return mixinManager.removeMixin(mixinName);
+  }
+
+  /**
+   * 检查mixin是否已注册
+   * @param {string} mixinName - mixin名称
+   * @returns {boolean} 是否已注册
+   */
+  isMixinRegistered(mixinName) {
+    return mixinManager.isRegistered(mixinName);
+  }
+
+  /**
+   * 检查mixin是否已应用
+   * @param {string} mixinName - mixin名称
+   * @returns {boolean} 是否已应用
+   */
+  isMixinApplied(mixinName) {
+    return mixinManager.isApplied(mixinName);
+  }
+
+  /**
+   * 获取所有已注册的mixin
+   * @returns {Array} mixin列表
+   */
+  getRegisteredMixins() {
+    return mixinManager.getRegisteredMixins();
+  }
+
+  /**
+   * 获取所有已应用的mixin
+   * @returns {Array} 已应用的mixin列表
+   */
+  getAppliedMixins() {
+    return mixinManager.getAppliedMixins();
+  }
+
+  /**
+   * 注册钩子
+   * @param {string} hookName - 钩子名称
+   * @param {Function} handler - 处理函数
+   * @param {Object} options - 选项
+   */
+  registerHook(hookName, handler, options = {}) {
+    return mixinManager.registerHook(hookName, handler, options);
+  }
+
+  /**
+   * 触发钩子
+   * @param {string} hookName - 钩子名称
+   * @param {...*} args - 参数
+   */
+  async triggerHook(hookName, ...args) {
+    return mixinManager.triggerHook(hookName, ...args);
+  }
+
+  /**
+   * 移除钩子
+   * @param {string} hookName - 钩子名称
+   * @param {Function} handler - 处理函数（可选）
+   */
+  removeHook(hookName, handler = null) {
+    return mixinManager.removeHook(hookName, handler);
+  }
+
+  /**
+   * 获取所有钩子名称
+   * @returns {Array} 钩子名称列表
+   */
+  getHookNames() {
+    return mixinManager.getHookNames();
   }
 }
 

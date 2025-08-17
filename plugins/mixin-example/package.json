@@ -1,0 +1,10 @@
+{
+  "name": "mixin-example",
+  "version": "1.0.0",
+  "description": "Mixin功能示例插件",
+  "main": "index.js",
+  "author": "ChatPlus Team",
+  "license": "MIT",
+  "dependencies": {},
+  "permissions": []
+}
